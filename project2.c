@@ -9,25 +9,33 @@ int main()
     printf("Choose 0 for Snake, 1 for water and 2 for Gun \n");
     scanf("%d", &player);
     printf("Computer chose %d\n", computer);
-
-    if (player == 0 && computer == 0)
-    { printf("Its a Draw!\n");}
-    else if (player == 0 && computer == 1)
-    {printf("You Win!\n");}
-    else if (player == 0 && computer == 2)
-    {printf("You Lose!\n");}
-    else if (player == 1 && computer == 0)
-    {printf("You Lose!\n");}
-    else if (player == 1 && computer == 1)
-    {printf("Its a Draw!\n");}
-    else if (player == 1 && computer == 2)
-    { printf("You win!\n");}
-    else if (player == 2 && computer == 0)
-    {printf("You win!\n");}
-    else if (player == 2 && computer == 1)
-    {printf("You Lose!\n");}
-    else if (player == 2 && computer == 2)
-    { printf("Its a Draw!\n");}
-    else{printf("Something went wrong!");}
+switch(player){
+    case 0: // Player chose Snake
+        switch (computer) {
+        case 0: printf("It's a Draw!\n");
+                    break;
+        case 1: printf("You Win!\n");
+                    break;
+        case 2: printf("You Lose!\n");
+                    break;} break;
+        case 1: // Player chose Water
+        switch (computer) {
+        case 0: printf("You Lose!\n");
+                    break;
+        case 1: printf("It's a Draw!\n");
+                    break;
+        case 2: printf("You Win!\n");
+                    break;}  break;
+        case 2: // Player chose Gun
+        switch (computer) {
+        case 0: printf("You Win!\n");
+                    break;
+        case 1: printf("You Lose!\n");
+                    break;
+        case 2: printf("It's a Draw!\n");
+                    break;} break;
+        default:
+            printf("Invalid choice!\n");
+    }
     return 0;
 }
